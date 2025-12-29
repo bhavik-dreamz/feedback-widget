@@ -1,0 +1,126 @@
+/* Floating Feedback Bar Styles */
+.floating-feedback-bar {
+  position: fixed;
+  z-index: 2147483647;
+  pointer-events: auto;
+}
+
+.feedback-bar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-bar-main-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  animation: slideInUp 0.5s ease-out;
+}
+
+.feedback-bar-main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(102, 126, 234, 0.5);
+}
+
+.feedback-bar-main-btn:active {
+  transform: translateY(0);
+}
+
+.feedback-bar-main-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.feedback-bar-text {
+  font-weight: 600;
+}
+
+.feedback-bar-comments-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-bar-comments-btn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.feedback-bar-comments-btn svg {
+  color: #667eea;
+}
+
+.feedback-bar-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #f56565;
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .feedback-bar-main-btn {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .feedback-bar-text {
+    display: none;
+  }
+
+  .feedback-bar-comments-btn {
+    width: 44px;
+    height: 44px;
+  }
+}

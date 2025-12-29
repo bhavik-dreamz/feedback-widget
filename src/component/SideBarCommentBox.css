@@ -1,0 +1,35 @@
+/* SideBarCommentBox CSS - for adding comments from sidebar */
+.sidebar-comment-box {
+  padding: 16px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8f9fa;
+}
+
+.sidebar-comment-box textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+  min-height: 80px;
+  margin-bottom: 12px;
+}
+
+.sidebar-comment-box button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sidebar-comment-box button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}

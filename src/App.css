@@ -1,0 +1,176 @@
+/* Main App Styles */
+.feedback-widget-app {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  pointer-events: auto;
+}
+
+.feedback-widget-app * {
+  box-sizing: border-box;
+}
+
+/* Mode Selector Popup */
+.feedback-mode-selector {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483646;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.feedback-mode-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.feedback-mode-popup {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  padding: 24px;
+  z-index: 1;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feedback-mode-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.feedback-mode-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.feedback-close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  color: #666;
+  transition: all 0.2s;
+}
+
+.feedback-close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+.feedback-mode-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.feedback-mode-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.feedback-mode-option:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.feedback-mode-icon {
+  font-size: 32px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2ff;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.feedback-mode-option:hover .feedback-mode-icon {
+  background: #667eea;
+  transform: scale(1.1);
+}
+
+.feedback-mode-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.feedback-mode-description {
+  font-size: 13px;
+  color: #666;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feedback-mode-popup {
+    max-width: 95%;
+  }
+
+  .feedback-mode-option {
+    padding: 12px;
+  }
+
+  .feedback-mode-icon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .feedback-mode-title {
+    font-size: 14px;
+  }
+
+  .feedback-mode-description {
+    font-size: 12px;
+  }
+}

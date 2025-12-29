@@ -1,0 +1,75 @@
+/* Path Selector Styles */
+.path-selector-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483645;
+  pointer-events: none;
+}
+
+.path-selector-instructions {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  z-index: 2147483646;
+  pointer-events: auto;
+  animation: slideDown 0.3s ease-out;
+}
+
+.path-selector-instructions p {
+  margin: 0;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.path-selector-instructions button {
+  padding: 8px 16px;
+  background: #f56565;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.path-selector-instructions button:hover {
+  background: #e53e3e;
+  transform: translateY(-1px);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .path-selector-instructions {
+    width: 90%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .path-selector-instructions button {
+    width: 100%;
+  }
+}

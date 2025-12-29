@@ -1,0 +1,167 @@
+/* User Popup CSS - extracted from build.js */
+.user-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(0 0 0 / 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483641;
+}
+
+.user-popup-card {
+  background: var(--popup-background-color, #fff);
+  border-radius: 10px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+  padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  max-width: 800px;
+  position: relative;
+  z-index: 9999999;
+}
+
+@media (max-width: 800px) {
+  .user-popup-card {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+.user-popup-content {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+@media (max-width: 700px) {
+  .user-popup-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .user-popup-content .user-popup-right {
+    display: none;
+  }
+}
+
+.user-popup-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.user-popup-header h2 {
+  font-size: 26px;
+  line-height: normal;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--popup-text-color, #111);
+}
+.user-popup-header p {
+  font-size: 12px;
+  color: var(--popup-text-color, #222);
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  line-height: 1.4;
+  opacity: 0.5;
+}
+
+.user-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 16px;
+}
+
+.name-input {
+  padding: 1rem;
+  border: 1px solid #dfdfdf;
+  border-radius: 0.7rem;
+  font-size: 13px;
+  background: var(--popup-background-color, #ffffff);
+  color: var(--popup-text-color, #222);
+  outline: none;
+  transition: border 0.2s;
+}
+.name-input:focus {
+  border: 1px solid #dfdfdf;
+}
+
+.form-actions {
+  margin-top: 0.5rem;
+}
+.submit-btn {
+  width: 100%;
+  padding: 1rem 0;
+  background: var(--popup-button-color, #111);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.submit-btn:disabled {
+  background: #c6c6c6;
+  color: #fff;
+  cursor: not-allowed;
+}
+.submit-btn:not(:disabled):hover {
+  background: var(--popup-button-color, #222);
+  opacity: 0.9;
+}
+
+.user-popup-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-popup-illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+}
+
+.user-popup-illustration img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Loading Spinner */
+.user-popup-header .loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--popup-button-color, #000);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
